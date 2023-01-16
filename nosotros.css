@@ -149,6 +149,10 @@ nav .nav-list li.btn:hover a{
     width: 1290px;
     max-width: 95%;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .all-text{
@@ -157,7 +161,79 @@ nav .nav-list li.btn:hover a{
     padding: 0 10px;
 }
 
+.all-text h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #eee;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
 
+.all-text h1{
+    font-size: 65px;
+    color: #2ecc71;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.all-text p{
+    font-family: 'Roboto', sans-serif;
+     font-size: 16px;
+     color: #eee;
+     line-height: 22px;
+     margin-bottom: 35px;
+}
+
+.bttn button{
+    background: #eee;
+    padding: 20px 32px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    border: none;
+    outline: none;
+    box-shadow: 0px 16px 32px 0px rgba(255, 255, 255, 0.541);
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.bttn button:hover{
+    background-color: #2ecc71;
+    color: white;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.bttn .bttn2{
+    background: black;
+    color: #eee;
+}
+
+@media screen and (max-width: 1250px){
+    .about{
+        width: 100%;
+        height: auto;
+    }
+
+    .all-text{
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .about .main img{
+        margin-bottom: 20px;
+    }
+
+    .all-text h1{
+        font-size: 45px;
+        margin-bottom: 10px;
+    }
+}
+
+/*responsive del navbar*/
 @media screen and (max-width: 930px) {
     nav .hamb{
         display: initial;
