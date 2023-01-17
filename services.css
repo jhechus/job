@@ -9,7 +9,7 @@
 
 /* Estilo para el cuerpo del documento */
 body{
-    overflow-x: hidden;
+    overflow-x: hidden; 
 }
 
 /* Clase para establecer el ancho máximo del contenido */
@@ -130,155 +130,136 @@ nav .nav-list li.btn:hover a{
 }
 
 /*aqui inicia el texto*/
+#service{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container{
     position: relative;
     display: flex;
-    padding: 80px 40px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 80px;
+    padding: 60px 0px;
+    gap: 60px;
+    z-index: 2;
 }
 
-.card{
+.container .box{
     position: relative;
-    width: 350px;
-    height: 180px;
-    background: #333;
-    transition: .4s;
-}
-
-.card:hover{
-    height: 450px;
-}
-
-.card .lines{
-    position: absolute;
-    inset: 0;
-    background: #000;
-    overflow: hidden;
-}
-
-.card .lines::before{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 600px;
-    height: 120px;
-    background: linear-gradient(transparent, #2ecc71,#2ecc71,#2ecc71,transparent);
-    animation: animate 4s linear infinite;
-    animation-play-state: paused;
-}
-
-.card:hover .lines::before{
-    animation-play-state: running;
-}
-
-@keyframes animate{
-    0%{
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100%{
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-.card .lines::after{
-    content: "";
-    position: absolute;
-    inset: 3px;
-    background: #292929;
-}
-
-.card .ImgBx{
-    position: absolute;
-    top: -60px;
-    left: 50px;
-    width: 150px;
-    height: 150px;
-    transform: translateX(36%);
-    background: #000;
-    transition: .5s;
-    z-index: 10;
-    overflow: hidden;
+    width: 300px;
+    /*altura del cuadro*/
+    height: 380px;
+    background: #2e2e2e;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.card:hover .ImgBx{
-    /*top: 25px;*/
-    width: 180px;
-    height: 180px;
-    transform: translateX(20%);
-}
-
-.card .ImgBx::before{
+.container .box::before{
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    height: 150px;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(transparent, #45f3ff,#45f3ff,#45f3ff,transparent);
-    animation: animate2 6s linear infinite;
-    animation-play-state: paused;
+    inset: -10px 50px;
+    border-top: 4px solid var(--clr);
+    border-bottom: 4px solid var(--clr);
+    z-index: -1;
+    transform: skewY(15deg);
+    transition: .5s ease-in-out;
 }
 
-.card:hover .ImgBx::before{
-    animation-play-state: running;
+.container .box:hover:before{
+    transform: skewY(0deg);
+    inset: -10px 40px;
 }
 
-@keyframes animate2{
-    0%{
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-    100%{
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-}
-
-.card .ImgBx::after{
+.container .box::after{
     content: "";
     position: absolute;
-    inset: 3px;
-    background: #292929;
+    inset: 60px -10px;
+    border-left: 4px solid var(--clr);
+    border-right: 4px solid var(--clr);
+    z-index: -1;
+    transform: skew(15deg);
+    transition: .5s ease-in-out;
 }
 
-.card .ImgBx img{
-    position: absolute;
-    width: 170px;
-    z-index: 1;
-    filter: invert(1);
-    opacity: .5;
-    transition: .5s;
+.container .box:hover::after{
+    transform: skew(0deg);
+    inset: 40px -10px;
 }
 
-.card:hover .ImgBx img{
-    opacity: 1;
-}
-
-.card .content{
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.container .box .content{
+    position: relative;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
+.container .box .content .icon{
+    color: var(--clr);
+    width: 80px;
+    height: 80px;
+    box-shadow: 0 0 0 4px #2e2e2e, 0 0 0 6px var(--clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    background: #2e2e2e;
+    transition: .5s ease-in-out;
+}
 
+.container .box:hover .content .icon{
+    background: var(--clr);
+    color: #2e2e2e;
+    box-shadow: 0 0 0 4px #2e2e2e, 0 0 0 300px var(--clr);
+}
 
+.container .box .content .text h3{
+    font-size: 1.5rem;
+    color: #eee;
+    font-weight: 500;
+    transition: .5s ease-in-out;
+}
 
+.container .box:hover .content .text h3{
+    color: #2e2e2e;
+}
 
+.container .box .content .text p{
+    color: #999;
+    transition: .5s ease-in-out;
+}
 
+.container .box:hover .content .text p{
+    color: #2e2e2e;
+}
 
+.container .box .content .text a{
+    position: relative;
+    background: var(--clr);
+    color: #2e2e2e;
+    padding: 8px 15px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: .5s ease-in-out;
+}
 
-
-
+.container .box:hover .content .text a{
+    background: #2e2e2e;
+    color: var(--clr);
+}
 
 /*responsive del navbar*/
 @media screen and (max-width: 930px) {
@@ -317,7 +298,7 @@ nav .nav-list li.btn:hover a{
         width: 60%;
         height: 50%;
         background: black;
-        z-index: 2;
+        z-index: 101;
         padding: 6% 9%;
         transition: .3s right;
         border-radius: 10px;
@@ -347,5 +328,15 @@ nav .nav-list li.btn:hover a{
 
     nav .nav-list.open{
         right: 0;
+    }
+
+    #service{
+        padding-top: 0px;
+    }
+}
+
+@media screen and (max-width: 1800px){
+    #service{
+        padding-top: 0px;
     }
 }
