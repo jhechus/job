@@ -246,6 +246,107 @@ nav .nav-list li.btn:hover a{
     padding: 14px 15px;
 }
 
+/*info*/
+.info{
+    background: #0e3959;
+}
+
+.info h3{
+    color: #eee;
+}
+
+.info .infoBox div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info .infoBox div span{
+    min-width: 40px;
+    height: 40px;
+    color: #eee;
+    background: #18b7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.info .infoBox div p{
+    color: #eee;
+    font-size: 1.1em;
+}
+
+.info .infoBox div a{
+    color: #eee;
+    font-size: 1.1em;
+}
+
+.sci{
+    margin-top: 30px;
+    display: flex;
+}
+
+.sci li{
+    list-style: none;
+    margin-right: 15px;
+}
+
+.sci li a{
+    color: #eee;
+    font-size: 2em;
+    color: #ccc;
+}
+
+.sci li a:hover{
+    color: #2ecc71;
+    transition: .4s;
+}
+
+.map{
+    padding: 0;
+}
+
+.map iframe{
+    width: 100%;
+    height: 100%;
+}
+
+/* responsive design */
+@media (max-width: 1100px){
+    .cont{
+        background: #0e3959;
+    }
+
+    .contacus{
+        padding: 20px;
+    }
+
+    .box{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "form" 
+        "info"
+        "map";
+    }
+
+    .map {
+        min-height: 350px;
+    }
+
+    .formBox .row50{
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .inputbox {
+        width: 100%;
+    }
+}
 
 /*responsive del navbar*/
 @media screen and (max-width: 930px) {
